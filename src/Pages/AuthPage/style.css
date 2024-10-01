@@ -64,7 +64,7 @@ div a {
 	border: none;
 }
 
-button {
+.boton {
 	border-radius: 20px ;
 	border: 1px solid #3873ba;
 	background-color: #3873ba ;
@@ -77,21 +77,21 @@ button {
 	transition: transform 80ms ease-in;
 }
 
-button:active {
+.boton:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.boton:focus {
 	outline: none;
 }
 
-button.ghost {
+.boton.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
 	border-radius: 50px;
 }
 
-form > button{
+form > .boton{
 	border-radius: 50px;
 }
 

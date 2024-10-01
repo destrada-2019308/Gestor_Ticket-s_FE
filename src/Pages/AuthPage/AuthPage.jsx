@@ -1,20 +1,29 @@
 import {useState} from 'react'
+import { useLogin } from '../../shared/Login-Register/useLogin'
+
 import './style.css'
+import { Input } from '../../Components/ui/Input'
+
 export const AuthPage = () => {
 
-    const [formReg, setFormReg] = useState({
-        name: '',
-        username: '',
-        email: '',
-        phone: '',
-        password: '',
-    })
+    const { login, isLoading } = useLogin()
 
     const [form, setForm] = useState({
         username: '',
         password: ''
     })
 
+    const handleOnSubmit = (e) => {
+        e.preventDefault()
+        login(form)
+    } 
+
+    const handleOnChange = (e) => {
+        setForm({
+          ...form,
+          [e.target.name]: e.target.value
+        })
+      }
 
     return (
         <div className='div-auth'>
@@ -23,7 +32,7 @@ export const AuthPage = () => {
                 <div className='cont' id='container'>
                     <div>
                         <div className="form-container sign-in-container">
-                            <form action="#" >
+                            <form onSubmit={handleOnSubmit} >
                                 <h1>Inicia sesión</h1>
 
                                 <div className="social-container">
@@ -32,18 +41,19 @@ export const AuthPage = () => {
                                     <a href="#" className="social"></a>
                                 </div>
                                 <span>usa tu cuenta personal</span>
-                                <input type="text" placeholder="Username" required className='form-input' value={form.username} onChange={e => setForm({ ...form, username: e.target.value })} />
-                                <input type="password" placeholder="Password" required className='form-input' value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} />
+                                
                                 {/* <a href="#" className='div-a'>Forgot your password?</a> */}
-
-                                <button className='mt-2' >Iniciar sesión</button>
+                                <Input type='text' className={'form-input'} placeholder='Username' name='username' required value={form.username} onChange={handleOnChange}/>
+                                <Input type='password' className={'form-input'} placeholder='Password' name='password' required value={form.password} onChange={handleOnChange}/>
+                                
+                                <button className='mt-2 boton' >Iniciar sesión</button>
                             </form>
                         </div>
                     </div>
                     <div className="overlay-container">
                         <div className="overlay">
                             <div className="overlay-panel overlay-right">
-                                <h1>Hola, Amiguito</h1>
+                                <h1>Hola de nuevo </h1>
                                 <p>Inicia sesión para acceder a las funcionalidades del proyecto </p>
 
                             </div>
