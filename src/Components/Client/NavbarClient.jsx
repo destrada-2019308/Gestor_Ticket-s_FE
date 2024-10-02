@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container, Nav, Navbar, NavDropdown, Button } from 'react-bootstrap'
-import BtnLogout from '../UI/BtnLogout'; 
-import Search from '../UI/Search'
+import { Nav, Navbar, NavDropdown, Button } from 'react-bootstrap'
+import BtnLogout from '../UI/BtnLogout';
+import Search from '../UI/Search';
 
 import img2 from '../../assets/logoMacro.png'
 import { useLogin } from '../../shared/Login-Register/useLogin';
-
 
 const StyledImg = styled.img`
   width: 5rem; 
@@ -18,14 +17,13 @@ const CenteredSearch = styled.div`
   justify-content: center;
 `;
 
-export const NavbarAdmin = () => {
+export const NavbarClient = () => {
 
+    const {logout} = useLogin()
 
-  const {logout} = useLogin()
-
-  const user = localStorage.getItem('user')
-  //console.log(user);
-  let data = JSON.parse(user)
+    const user = localStorage.getItem('user')
+    //console.log(user);
+    let data = JSON.parse(user)
 
   return (
     <Navbar collapseOnSelect expand="lg" className=" p-2" style={{ background: '#2f518d', color: '#fff' }}>
@@ -33,7 +31,7 @@ export const NavbarAdmin = () => {
         <StyledImg src={img2} alt="" />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-        <Navbar.Brand href="/home/macro/admin" style={{ color: '#fff', fontSize: '' }}> Usuarios</Navbar.Brand>
+        <Navbar.Brand href="/home/macro/admin" style={{ color: '#fff', fontSize: '' }}> Home Page</Navbar.Brand>
         <Navbar.Brand href="/home/macro/admin/gerencias" style={{ color: '#fff', fontSize: '' }}> Gerencias</Navbar.Brand>
           <Nav className="me-auto"> 
           </Nav> 
@@ -48,6 +46,5 @@ export const NavbarAdmin = () => {
        
       
     </Navbar>
-
   )
 }

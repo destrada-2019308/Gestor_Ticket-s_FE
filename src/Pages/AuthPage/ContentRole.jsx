@@ -14,7 +14,7 @@ export const ContentRole = () => {
         {
             role === 'ADMIN' ? (
                 <Route path="macro" element={<HomePageAdmin/>}/>
-            ) : role === 'CLIENT' ? (
+            ) : role === 'CLIENTE' ? (
                 <Route path="macro" element={<HomePageClient/>}/>
             ) : role === 'GERENTE' ? (
                 <Route path="macro" element={<HomePageGerente/>}/>

@@ -4,7 +4,7 @@ export const Input = ({type, placeholder, name, required, value, onChange}) => {
   return (
     <input 
     type={type}
-    className="form-input" 
+    className="form-input input" 
     value={value} 
     onChange={onChange} 
     name={name} 

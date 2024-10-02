@@ -5,7 +5,7 @@ const BtnDelete = () => {
   return (
     <StyledWrapper>
       <button className="noselect">
-        <span className="text">Delete</span>
+        <span className="text">Eliminar</span>
         <span className="icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,8 +27,7 @@ const StyledWrapper = styled.div`
  height: 50px;
  cursor: pointer;
  display: flex;
- align-items: center;
- background: red;
+ align-items: center; 
  border: none;
  border-radius: 5px;
  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
@@ -42,12 +41,12 @@ button, button span {
 button .text {
  transform: translateX(35px);
  color: #707070;
- font-weight: bold;
+ font-weight: 600;
 }
 
 button .icon {
  position: absolute;
- border-left: 1px solid #c41b1b;
+ border-left: 1px solid #707070;
  transform: translateX(110px);
  height: 40px;
  width: 40px;
@@ -62,7 +61,7 @@ button svg {
 }
 
 button:hover {
- background: #ff3636;
+ background: #ebebeb;
 }
 
 button:hover .text {

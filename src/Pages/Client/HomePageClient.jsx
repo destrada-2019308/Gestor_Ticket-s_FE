@@ -1,7 +1,10 @@
 import React from 'react'
+import { NavbarClient } from '../../Components/Client/NavbarClient'
 
 export const HomePageClient = () => {
   return (
-    <div>HomePageClient</div>
+    <>
+      <NavbarClient/>
+    </>
   )
 }

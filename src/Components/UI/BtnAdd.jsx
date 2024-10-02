@@ -1,27 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-const BtnAdd = () => {
+const BtnAdd = ({onClick}) => {
   return (
     <StyledWrapper>
-      <button type="button" className="button">
-        <span className="button__text">Add Item</span>
-        <span className="button__icon">
+      <button onClick={onClick} className="noselect">
+        <span className="text">Agregar</span>
+        <span className="icon">
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
             viewBox="0 0 24 24"
-            strokeWidth={2}
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            stroke="currentColor"
             height="24"
-            fill="none"
-            className="svg"
-          >
-            <line y2="19" y1="5" x2="12" x1="12" />
-            <line y2="12" y1="12" x2="19" x1="5" />
-          </svg>
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          />
+          <span className="buttonSpan">+</span>
         </span>
       </button>
     </StyledWrapper>
@@ -29,63 +21,77 @@ const BtnAdd = () => {
 };
 
 const StyledWrapper = styled.div`
-  .button {
-  position: relative;
+  button {
   width: 150px;
-  height: 40px;
+  height: 50px;
   cursor: pointer;
   display: flex;
-  align-items: center;
-  border: 1px solid #3873ba;
-  background-color: #263061;
+  align-items: center; 
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #3873ba;
 }
 
-.button, .button__icon, .button__text {
-  transition: all 0.3s;
+button,
+button span {
+  transition: 200ms;
 }
 
-.button .button__text {
-  transform: translateX(30px);
+button .text {
+  transform: translateX(35px);
   color: #fff;
   font-weight: 600;
 }
 
-.button .button__icon {
+button .icon {
   position: absolute;
-  transform: translateX(109px);
-  height: 100%;
-  width: 39px;
-  background-color: #3873ba;
+  border-left: 1px solid #ebebeb;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.button .svg {
-  width: 30px;
-  stroke: #fff;
+button svg {
+  width: 15px;
+  fill: #eee;
 }
 
-.button:hover {
+button:hover {
   background: #3873ba;
 }
 
-.button:hover .button__text {
+button:active {
+  background: rgba(56, 115, 186, 0.8);
+}
+
+button:hover .text {
   color: transparent;
 }
 
-.button:hover .button__icon {
-  width: 148px;
+button:hover .icon {
+  width: 150px;
+  border-left: none;
   transform: translateX(0);
 }
 
-.button:active .button__icon {
-  background-color: #2e8644;
+button:focus {
+  outline: none;
 }
 
-.button:active {
-  border: 1px solid #2e8644;
+button:active .icon svg {
+  transform: scale(0.8);
 }
+
+.buttonSpan {
+  color: white;
+  margin: 150px;
+  font-size: 30px;
+}
+
 `;
 
 export default BtnAdd;
