@@ -2,7 +2,7 @@ import {useState} from 'react'
 import { useLogin } from '../../shared/Login-Register/useLogin'
 
 import './style.css'
-import { Input } from '../../Components/ui/Input'
+import { Input } from '../../Components/UI/Input'
 
 export const AuthPage = () => {
 
