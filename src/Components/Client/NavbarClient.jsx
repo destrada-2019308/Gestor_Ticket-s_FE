@@ -31,8 +31,9 @@ export const NavbarClient = () => {
         <StyledImg src={img2} alt="" />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-        <Navbar.Brand href="/home/macro/admin" style={{ color: '#fff', fontSize: '' }}> Home Page</Navbar.Brand>
-        <Navbar.Brand href="/home/macro/admin/gerencias" style={{ color: '#fff', fontSize: '' }}> Gerencias</Navbar.Brand>
+        <Navbar.Brand href="/home/macro/client" style={{ color: '#fff', fontSize: '' }}> Home Page</Navbar.Brand>
+        <Navbar.Brand href="#" style={{ color: '#fff', fontSize: '' }}> Inventario</Navbar.Brand>
+        
           <Nav className="me-auto"> 
           </Nav> 
           <CenteredSearch>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import BtnAdd from '../../../Components/UI/BtnAdd'
-import { Input } from '../../../Components/ui/Input'
+import { Input } from '../../../Components/UI/Input'
 import BtnDelete from '../../../Components/UI/BtnDelete'
 import BtnEdit from '../../../Components/UI/BtnEdit.jsx' 
 import Loading from '../../../Components/Loading/Loading'
@@ -173,7 +173,7 @@ export const Users = () => {
                         </div> 
                         <div className='my-4'>
                                 <div className='btn-group'>
-                                <BtnAdd onClick={validatePass}/>
+                                <BtnAdd name={"Guardar"} onClick={validatePass}/>
                                 <div className='mx-4'>
                                 <BtnEdit onClick={updatedUser}/>
                                 </div> 

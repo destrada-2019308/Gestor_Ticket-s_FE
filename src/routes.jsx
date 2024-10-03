@@ -6,6 +6,7 @@ import { HomePageClient } from './Pages/Client/HomePageClient.jsx'
 import { HomePageGerente } from './Pages/Gerente/HomePageGerente.jsx'
 import { ContentRole } from './Pages/AuthPage/ContentRole.jsx'
 import { Gerencias } from './Pages/Admin/CRUD\'s/Gerencias.jsx'
+import { Control } from './Components/Client/Control.jsx'
 
 export const routes = [
     //Paginas principales
@@ -17,5 +18,6 @@ export const routes = [
     {path: '/home/macro/admin/gerencias', element: <Gerencias/>},
     {path: '/home/macro/client', element: <HomePageClient/>},
     {path: '/home/macro/gerente', element: <HomePageGerente/>},
+    {path: '/home/macro/client/control', element: <Control/>},
  
 ]

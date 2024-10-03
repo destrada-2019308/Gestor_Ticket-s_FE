@@ -1,10 +1,22 @@
 import React from 'react'
 import { NavbarClient } from '../../Components/Client/NavbarClient'
+import { ControlRapido } from '../../Components/Client/ControlRapido'
+import { Control } from '../../Components/Client/Control'
 
 export const HomePageClient = () => {
   return (
     <>
-      <NavbarClient/>
+      <NavbarClient/> 
+        <div className="row ">
+          <div className="col-7 ml-4">
+            <Control/>  
+          </div>
+          <div className='col-4 align-self-center'>
+            <div className=' '>
+              <ControlRapido/>  
+            </div>
+          </div>   
+        </div> 
     </>
   )
 }

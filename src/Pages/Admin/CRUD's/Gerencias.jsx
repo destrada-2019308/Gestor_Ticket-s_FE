@@ -1,5 +1,5 @@
 import { NavbarAdmin } from '../../../Components/Admin/NavbarAdmin'
-import { Input } from '../../../Components/ui/Input'
+import { Input } from '../../../Components/UI/Input'
 import { useState, useEffect } from 'react'
 import { useManagements } from '../../../shared/Managements/useManagements'
 import BtnAdd from '../../../Components/UI/BtnAdd' 
@@ -149,7 +149,7 @@ export const Gerencias = () => {
                         </div>
                         <div className="my-4">
                             <div className="btn-group">
-                                <BtnAdd />
+                                <BtnAdd name={"Guardar"} />
                                 <div className="mx-4">
                                 <BtnEdit onClick={updatedManagement}/>
                                 </div>

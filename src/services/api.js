@@ -96,3 +96,22 @@ export const deleteManagementRequest = async (id) => {
         return { error: true, error }
     }
 }
+
+/* CRUD DE CONTROL DE TICKETS */
+export const addControlRequest = async (params) => {
+    try {
+        return await apiClient.post("/control/addControl", params)
+    } catch (error) {
+        console.error(error);
+        return { error: true, error }
+    }
+}
+
+export const calcularControlRequest = async (params) => {
+    try {
+        return await apiClient.post("/control/calcularControl", params)
+    } catch (error) {
+        console.error(error);
+        return { error: true, error }
+    }
+}

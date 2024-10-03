@@ -46,10 +46,13 @@ export const useUser = () => {
     const deleteUser = async(id) => {
         setIsLoading(true)
         let user = localStorage.getItem('user')
-        let userId = JSON.parse(user).id
+        let userId = JSON.parse(user).codeUser
  
-        if(id === userId) return toast.error('You can not delete same user')
-
+        if(id === userId) {
+            toast.error('You can not delete same user')
+            return getUsers()
+        }
+        console.log(id, userId)
         const res = await deleteUserRequest(id)
         setIsLoading(false)
 

@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const BtnAdd = ({onClick}) => {
+const BtnAdd = ({onClick, name}) => {
   return (
     <StyledWrapper>
       <button onClick={onClick} className="noselect">
-        <span className="text">Agregar</span>
+        <span className="text">{name}</span>
         <span className="icon">
           <svg
             viewBox="0 0 24 24"
