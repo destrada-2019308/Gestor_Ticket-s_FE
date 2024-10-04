@@ -115,3 +115,32 @@ export const calcularControlRequest = async (params) => {
         return { error: true, error }
     }
 }
+
+export const getControlRequest = async () => {
+    try {
+        return await apiClient.get("/control/getControl")
+    } catch (error) {
+        console.error(error);
+        return { error: true, error }
+    }
+}
+
+/* CRUD DE INVENTARIOS */
+
+export const addInventoryRequest = async (params) => {
+    try {
+        return await apiClient.post("/inventary/createInventory", params)
+    } catch (error) {
+        console.error(error);
+        return { error: true, error }
+    }
+}
+
+export const getInventoyRequest = async () => {
+    try {
+        return await apiClient.get("/inventary/getInventory")
+    } catch (error) {
+        console.error(error);
+        return { error: true, error }
+    }
+}

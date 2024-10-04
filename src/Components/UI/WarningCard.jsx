@@ -7,9 +7,9 @@ const WarningCard = ({ onAcepted, onCanceled, onClosed}) => {
       <div className="card">
          
         <div className="content">
-          <span className="title">¿Estás seguro de querer eliminar a este usuario?</span>
+          <span className="title">¿Estás seguro de querer eliminar a este dato?</span>
           <div className="desc">
-            Este usuario será eliminado permanentemente de la base de datos.
+            Este dato será eliminado permanentemente de la base de datos.
           </div>
           <div className="actions">
             <div>

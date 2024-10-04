@@ -95,7 +95,7 @@ export const Users = () => {
             nameUser: user.nameUser,
             lastname: user.lastname,
             username: user.username,
-            email: user.email, 
+            email: user.email,  
             passwordConfirm: '',
             phone: user.phone,
             role: user.role,
@@ -120,7 +120,13 @@ export const Users = () => {
                         <div className='row'>
                             <div className="col">
                                 <label htmlFor="">Nombre</label>
-                                <Input type={"text"} placeholder={"Nombre"} name={"nameUser"} required value={form.nameUser} onChange={handleOnChange} />
+                                <Input 
+                                    type={"text"} 
+                                    placeholder={"Nombre"} 
+                                    name={"nameUser"} 
+                                    required 
+                                    value={form.nameUser} 
+                                    onChange={handleOnChange} />
                             </div>
                             <div className="col">
                                 <label htmlFor="">Apellido</label>

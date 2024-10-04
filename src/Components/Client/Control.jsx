@@ -19,7 +19,7 @@ export const Control = () => {
         boletosUsados4h: '',
         boletosUsados2h: '',
         boletosUsados1h: '',
-        boletosUsados30m: ''
+        boletosUsados30min: ''
     })
 
     let user = localStorage.getItem('user')
@@ -57,6 +57,8 @@ export const Control = () => {
             [e.target.name]: e.target.value
         })
     }
+
+    console.log(form)
 
   return (
     <div>
@@ -153,10 +155,10 @@ export const Control = () => {
                             <label htmlFor="">Boletos usados de 30 minutos</label>
                             <Input
                                 type={'number'}
-                                name="boletosUsados30m" 
+                                name="boletosUsados30min" 
                                 onChange={handleOnChange}
                                 placeholder={'Boletos de 30min'}
-                                value={form.boletosUsados30m}
+                                value={form.boletosUsados30min}
                                 required={true}/>
                         </div>
                     </div>

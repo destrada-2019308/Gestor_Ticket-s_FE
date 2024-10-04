@@ -2,10 +2,11 @@ import { Input } from '../UI/Input'
 import { useControl } from '../../shared/Control/useControl'
 import { useState } from 'react'
 import BtnAdd from '../UI/BtnAdd'
+import CardResult from '../UI/CardResult'
 
 export const ControlRapido = () => {
 
-    const { calcularControl, control } = useControl()
+    const { calcularControl, control, isResult } = useControl()
 
     const [ form, setForm ] = useState({
         hrs_entry: '',   
@@ -53,12 +54,16 @@ export const ControlRapido = () => {
                                     {
                                         control.map(( index) => (
                                             <tr key={index}>
-                                                <td>{index}</td>
+                                                <td>{index}</td> 
                                             </tr>
                                         ))
                                     }
+                                    
                                 </tbody>
                             </table>
+                            <div>
+                                <CardResult name={isResult}/> 
+                            </div>
                         </div>
                     </div>
                 </form>
