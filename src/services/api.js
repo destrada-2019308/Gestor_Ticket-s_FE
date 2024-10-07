@@ -116,9 +116,27 @@ export const calcularControlRequest = async (params) => {
     }
 }
 
-export const getControlRequest = async () => {
+export const getControlRequest = async (params) => {
     try {
-        return await apiClient.get("/control/getControl")
+        return await apiClient.get( `/control/getControl/${params}`)
+    } catch (error) {
+        console.error(error);
+        return { error: true, error }
+    }
+}
+
+export const getAllControlRequest = async () => {
+    try {
+        return await apiClient.get("/control/getAllControl")
+    } catch (error) {
+        console.error(error);
+        return { error: true, error }
+    }
+}
+
+export const findByRoleRequest = async (params) => {
+    try {
+        return await apiClient.post("/control/findByRole", params)
     } catch (error) {
         console.error(error);
         return { error: true, error }

@@ -81,12 +81,13 @@ export const Inventary = () => {
                                 onChange={handleOnChange}/>
                         </div>
                     </div> 
+                    <br />
                     <BtnAdd name={'Guardar'}/>
                 </form>
                 <div className="m-4">
                     <div>
                         <h4>Lista de Inventarios</h4>
-                        <table className="table table-hover  border shadow-sm p-3 mb-5 bg-body rounded">
+                        <table className="table table-hover  border shadow-sm p-4 mb-5 bg-body rounded ">
                                     <thead className='thead-dark'>
                                         <tr>
                                             <th scope='col'>#</th>
@@ -95,10 +96,10 @@ export const Inventary = () => {
                                             <th scope='col'>Boleta 2h</th>
                                             <th scope='col'>Boleta 1h</th>
                                             <th scope='col'>Boleta 30min</th> 
-                                            <th scope='col'>Cantidad</th>
-                                            <th scope='col'>Cantidad</th>
-                                            <th scope='col'>Cantidad</th>
-                                            <th scope='col'>Cantidad</th> 
+                                            <th scope='col'>Cantidad (4 horas)</th>
+                                            <th scope='col'>Cantidad (2 horas)</th>
+                                            <th scope='col'>Cantidad (1 horas)</th>
+                                            <th scope='col'>Cantidad (30 minutos)</th> 
                                         </tr>
                                     </thead >
                                     <tbody className=''>

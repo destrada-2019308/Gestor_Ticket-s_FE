@@ -1,17 +1,17 @@
-import { NavbarAdmin } from '../../../Components/Admin/NavbarAdmin'
-import { Input } from '../../../Components/UI/Input'
 import { useState, useEffect } from 'react'
 import { useManagements } from '../../../shared/Managements/useManagements'
-import BtnAdd from '../../../Components/UI/BtnAdd' 
-import Loading from '../../../Components/Loading/Loading' 
-import BtnEdit from '../../../Components/UI/BtnEdit.jsx'
+import { NavbarGerente } from '../../../Components/Gerente/NavbarGerente'
+import { Input } from '../../../Components/UI/Input'
+import  BtnAdd  from '../../../Components/UI/BtnAdd'
+import BtnEdit  from '../../../Components/UI/BtnEdit'
+import BtnDelete from '../../../Components/UI/BtnDelete'
 import { EditIcon, DeleteIcon } from '@chakra-ui/icons'
 import WarningCard from '../../../Components/UI/WarningCard'
-import { Table } from 'react-bootstrap'
+import Loading from '../../../Components/Loading/Loading'
 
-export const Gerencias = () => {
+export const GerenciasGerente = () => {
 
-    const { getManagements, managements, addManagement, updateManagement, deleteManagement, isLoading } = useManagements()
+  const { getManagements, managements, addManagement, updateManagement, deleteManagement, isLoading } = useManagements()
 
     const [ showWarning, setShowWarning ] = useState(false)
     const [ managementSelected, setManagementSelected ] = useState(null)
@@ -87,7 +87,7 @@ export const Gerencias = () => {
 
   return (
     <>
-        <NavbarAdmin/>
+     <NavbarGerente/>
         <div>
             <div className="m-4">
                 <div className="form-control m-2 p-4">
@@ -164,7 +164,7 @@ export const Gerencias = () => {
                             {isLoading ? (
                                 <Loading/>
                             ): (
-                                <Table striped bordered hover responsive>
+                                <table className="table table-hover border shadow-sm p-3 mb-5 bg-body rounded">
                                     <thead className="thead-dark">
                                         <tr>
                                             <th scope='col'>#</th>
@@ -195,7 +195,7 @@ export const Gerencias = () => {
                                             </tr>
                                         ))}
                                     </tbody>
-                                </Table>
+                                </table>
                             )}
                         </div>
                     </div>

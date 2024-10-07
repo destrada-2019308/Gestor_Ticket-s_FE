@@ -8,6 +8,9 @@ import { ContentRole } from './Pages/AuthPage/ContentRole.jsx'
 import { Gerencias } from './Pages/Admin/CRUD\'s/Gerencias.jsx'
 import { Control } from './Components/Client/Control.jsx'
 import { Inventary } from './Pages/Client/Inventray/Inventary.jsx'
+import { ControlPage } from './Pages/Gerente/ControlPage.jsx'
+import { Report } from './Pages/Gerente/MainView/Report.jsx' 
+import { GerenciasGerente } from './Pages/Gerente/MainView/GerenciasGerente.jsx'
 
 export const routes = [
     //Paginas principales
@@ -21,4 +24,8 @@ export const routes = [
     {path: '/home/macro/gerente', element: <HomePageGerente/>},
     {path: '/home/macro/client/control', element: <Control/>},
     {path: '/home/macro/cliente/inventary', element: <Inventary/>},
+    {path: '/home/macro/gerente/control', element: <ControlPage/>},
+    {path: '/home/macro/gerente/report', element: <Report/>},
+    {path: '/home/macro/gerente/gerencias', element: <GerenciasGerente/>},
+    
 ]

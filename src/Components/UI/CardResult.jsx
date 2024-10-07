@@ -14,6 +14,9 @@ const CardResult = ( {name} ) => {
             Debes de dar:
             {name}
         </div>
+        <div className="row">
+          <div className="col">Debes dar {name}</div>
+        </div>
         <div className="circle">
           <span className="bg-pink-500 box inline-block center w-3 h-3 rounded-full" />
         </div>
