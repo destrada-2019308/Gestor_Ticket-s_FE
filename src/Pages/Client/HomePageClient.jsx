@@ -7,6 +7,7 @@ import BtnAdd from '../../Components/UI/BtnAdd'
 import { Input } from '../../Components/UI/Input'
 import { useManagements } from '../../shared/Managements/useManagements'
 import { useControl }  from '../../shared/Control/useControl'
+import { Table } from 'react-bootstrap'
 
 export const HomePageClient = () => {
 
@@ -17,6 +18,23 @@ export const HomePageClient = () => {
     hrs_init: '',
   })
 
+  const boletosUsadosCantidad = (boletosUsados4h, boletosUsados2h, boletosUsados1h, boletosUsados30min) => {
+    //4 horas son 240 minutos
+    //2 horas son 120 minutos
+    //1 hora son 60 minutos
+    //30 minutos son 30 minutos
+    let boletos4h = boletosUsados4h * 240
+    let boletos2h = boletosUsados2h * 120
+    let boletos1h = boletosUsados1h * 60
+    let boletos30m = boletosUsados30min * 30
+    
+    const result = boletos4h + boletos2h + boletos1h + boletos30m
+
+    return (result/60)
+
+  }
+
+
   const [form, setForm] = useState({
     hrs_init: '',
     role: '',
@@ -24,11 +42,15 @@ export const HomePageClient = () => {
     nameClient: '',
     codeGerencia: '',
     codeUser: '',
-    boletosUsados4h: '',
-    boletosUsados2h: '',
-    boletosUsados1h: '',
-    boletosUsados30min: ''
+    boletosUsados4h: 0,
+    boletosUsados2h: 0,
+    boletosUsados1h: 0,
+    boletosUsados30min: 0
   })
+
+
+  let result = boletosUsadosCantidad(form.boletosUsados4h, form.boletosUsados2h, form.boletosUsados1h, form.boletosUsados30min)
+
 
   let user = localStorage.getItem('user')
   let userId = JSON.parse(user).codeUser
@@ -60,14 +82,15 @@ export const HomePageClient = () => {
     })
   }
 
+
+
   const handleOnSubmit = (e) => {
     e.preventDefault()
     form.codeUser = userId
 
-    addControl(form)
-    console.log(form)
+    addControl(form) 
     cleanInputs()
-  }
+  } 
 
   const handleOnSubmit1 = (e) => {
     e.preventDefault()
@@ -100,6 +123,7 @@ export const HomePageClient = () => {
             <div className="m-4">
               <div className="form-control m-2 p-4">
                 <h4>Control de tickets</h4>
+                <hr />
                 <form action="#" onSubmit={handleOnSubmit}>
                   <div className="row">
                     <div className="col">
@@ -197,7 +221,9 @@ export const HomePageClient = () => {
                         required={true}/>
                     </div>
                   </div>
-                  <br />
+                  <div className="m-2">
+                    <span className='badge badge-secondary text-danger '>La cantidad de horas que estas dando es {result}</span>
+                  </div>
                   <BtnAdd name={'Agregar'} />
                 </form>
               </div>
@@ -209,6 +235,7 @@ export const HomePageClient = () => {
             <div className="m-2">
               <div className="form-control m-2 p-4">
                 <h4>Control Rápido</h4>
+                <hr />
                 <form action="" onSubmit={handleOnSubmit1}>
                   <div>
                     <label htmlFor="">Ingresa la hora de entrada</label>
@@ -223,7 +250,7 @@ export const HomePageClient = () => {
 
                   <div className='m-4'>
                     <div>
-                      <table className='table table-hover border shadow-sm p-3 mb-5 bg-body rounded'>
+                      <Table responsive className='table table-hover border shadow-sm p-3 mb-5 bg-body rounded'>
                         <thead className='table'>
                           <tr>
                             <th scope='col'>Boletos disponibles</th>
@@ -238,7 +265,7 @@ export const HomePageClient = () => {
                             ))
                           }
                         </tbody>
-                      </table>
+                      </Table>
                     </div>
                   </div>
                 </form>

@@ -18,16 +18,14 @@ export const useControl = () => {
         const res = await calcularControlRequest(params)
         
         if(res.error) return toast.error(res.error.response.data.error || 'Error to calculate control')
-
-        console.log(res.data.result2) 
+ 
         toast.success(res.data.message || 'Control calculated')
         setControl(res.data.result2)   
         setIsResult(res.data.resultOP)
     }
 
     const getControl = async (params) => {
-      const res = await getControlRequest(params)
-      console.log(res)
+      const res = await getControlRequest(params) 
       if(res.error) return toast.error(res.error.response.data.error || 'Error to get control')
 
       setIsControl(res.data.data)
@@ -45,14 +43,12 @@ export const useControl = () => {
 
     const findByRole = async(params) => {
       
-      const res = await findByRoleRequest(params)
-      console.log(res, params)
+      const res = await findByRoleRequest(params) 
 
       if(res.error) return toast.error(res.error.response.data.error || 'Error to get control')
       setResult(res.data.result)
       setData(res.data.find)
-      
-      console.log(res.data.result) 
+       
   }
 
   const getAllControl = async () => {

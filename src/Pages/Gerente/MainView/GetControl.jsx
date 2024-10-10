@@ -19,6 +19,7 @@ export const GetControl = () => {
         <div className="form-control ">
         <div className="m-4 p-4">
         <h2>Control de boletas</h2>
+        <hr />
         <br />
             <Table striped bordered hover responsive>
                 <thead className='thead-dark  '>

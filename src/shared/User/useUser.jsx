@@ -51,8 +51,7 @@ export const useUser = () => {
         if(id === userId) {
             toast.error('You can not delete same user')
             return getUsers()
-        }
-        console.log(id, userId)
+        } 
         const res = await deleteUserRequest(id)
         setIsLoading(false)
 

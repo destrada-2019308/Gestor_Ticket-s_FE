@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useControl } from '../../shared/Control/useControl'
+import { Table } from 'react-bootstrap'
 
 export const GetControl = () => {
 
@@ -10,17 +11,14 @@ export const GetControl = () => {
 
     useEffect(() => {
         getControl(userId)
-    }, [])
-
-    console.log(isControl)
-
+    }, []) 
     return (
         <>
             <div>
                 <div className='m-4'>
                     <div className="form-control p-4">
                         <div className="m-4">
-                        <table className="table table-hover  border shadow-sm p-3 mb-5 bg-body rounded">
+                        <Table striped bordered hover responsive >
                             <thead className='thead-dark'>
                                 <tr>
                                     <th scope='col'>#</th>
@@ -49,7 +47,7 @@ export const GetControl = () => {
                                     ))
                                 }
                             </tbody>
-                        </table>
+                        </Table>
                         </div>
                     </div>
                 </div>
